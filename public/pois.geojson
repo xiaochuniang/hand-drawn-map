@@ -1,0 +1,80 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-20, 20]
+      },
+      "properties": {
+        "id": "poi_1",
+        "name_zh": "咖啡馆",
+        "name_en": "Coffee Shop",
+        "desc_zh": "一个舒适的咖啡馆，提供美味的咖啡和点心。",
+        "desc_en": "A cozy coffee shop serving delicious coffee and pastries.",
+        "category": "food"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10, 30]
+      },
+      "properties": {
+        "id": "poi_2",
+        "name_zh": "博物馆",
+        "name_en": "Museum",
+        "desc_zh": "展示当地历史和文化的博物馆。",
+        "desc_en": "A museum showcasing local history and culture.",
+        "category": "culture"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [40, -10]
+      },
+      "properties": {
+        "id": "poi_3",
+        "name_zh": "公园",
+        "name_en": "Park",
+        "desc_zh": "一个美丽的城市公园，适合休闲散步。",
+        "desc_en": "A beautiful city park perfect for leisurely walks.",
+        "category": "nature"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-30, -20]
+      },
+      "properties": {
+        "id": "poi_4",
+        "name_zh": "书店",
+        "name_en": "Bookstore",
+        "desc_zh": "独立书店，收藏各类图书和杂志。",
+        "desc_en": "An independent bookstore with a wide selection of books and magazines.",
+        "category": "culture"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [20, -30]
+      },
+      "properties": {
+        "id": "poi_5",
+        "name_zh": "艺术画廊",
+        "name_en": "Art Gallery",
+        "desc_zh": "当代艺术画廊，展示本地和国际艺术家的作品。",
+        "desc_en": "A contemporary art gallery featuring works from local and international artists.",
+        "category": "culture"
+      }
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-40, 40]
+      },
+      "properties": {
+        "id": "viewpoint_1",
+        "name_zh": "山顶观景台",
+        "name_en": "Mountain Peak Viewpoint",
+        "desc_zh": "从山顶可以俯瞰整个城市的壮丽景色。",
+        "desc_en": "Stunning panoramic views of the entire city from the mountain peak.",
+        "elevation": 450
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [50, 20]
+      },
+      "properties": {
+        "id": "viewpoint_2",
+        "name_zh": "海滨步道",
+        "name_en": "Waterfront Promenade",
+        "desc_zh": "美丽的海滨步道，可以欣赏日落美景。",
+        "desc_en": "Beautiful waterfront promenade with spectacular sunset views.",
+        "elevation": 10
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-10, -40]
+      },
+      "properties": {
+        "id": "viewpoint_3",
+        "name_zh": "古城墙观景点",
+        "name_en": "Ancient City Wall Viewpoint",
+        "desc_zh": "从古城墙上欣赏历史街区的独特视角。",
+        "desc_en": "Unique perspective of the historic district from the ancient city wall.",
+        "elevation": 80
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30, 50]
+      },
+      "properties": {
+        "id": "viewpoint_4",
+        "name_zh": "灯塔观景台",
+        "name_en": "Lighthouse Viewpoint",
+        "desc_zh": "海边灯塔，可以看到辽阔的海景和港口。",
+        "desc_en": "Seaside lighthouse offering expansive ocean and harbor views.",
+        "elevation": 65
+      }
+    }
+  ]
+}

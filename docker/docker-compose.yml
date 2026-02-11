@@ -1,0 +1,98 @@
+version: '3.8'
+
+services:
+  # Nginx Web Server
+  nginx:
+    image: nginx:alpine
+    container_name: scenic_map_nginx
+    ports:
+      - "${NGINX_HTTP_PORT:-80}:80"
+      - "${NGINX_HTTPS_PORT:-443}:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ../backend/public:/var/www/html/public
+      - ../frontend/dist:/var/www/html/frontend
+      - ../admin/dist:/var/www/html/admin
+    depends_on:
+      - php
+    networks:
+      - scenic_map_network
+    restart: unless-stopped
+
+  # PHP-FPM
+  php:
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    container_name: scenic_map_php
+    volumes:
+      - ../backend:/var/www/html
+      - ./php/php.ini:/usr/local/etc/php/php.ini:ro
+    environment:
+      - PHP_VERSION=${PHP_VERSION:-7.4}
+      - APP_ENV=${APP_ENV:-production}
+      - APP_DEBUG=${APP_DEBUG:-false}
+    depends_on:
+      - mysql
+      - redis
+    networks:
+      - scenic_map_network
+    restart: unless-stopped
+
+  # MySQL Database
+  mysql:
+    image: mysql:5.7
+    container_name: scenic_map_mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE:-scenic_map}
+      - MYSQL_USER=${MYSQL_USER:-scenic_map_user}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+      - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf:ro
+    networks:
+      - scenic_map_network
+    restart: unless-stopped
+
+  # Redis Cache
+  redis:
+    image: redis:6-alpine
+    container_name: scenic_map_redis
+    ports:
+      - "6379:6379"
+    command: redis-server --requirepass ${REDIS_PASSWORD}
+    volumes:
+      - redis_data:/data
+    networks:
+      - scenic_map_network
+    restart: unless-stopped
+
+  # phpMyAdmin (optional, for development)
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: scenic_map_phpmyadmin
+    ports:
+      - "8080:80"
+    environment:
+      - PMA_HOST=mysql
+      - PMA_PORT=3306
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    depends_on:
+      - mysql
+    networks:
+      - scenic_map_network
+    profiles:
+      - dev
+
+networks:
+  scenic_map_network:
+    driver: bridge
+
+volumes:
+  mysql_data:
+  redis_data:
