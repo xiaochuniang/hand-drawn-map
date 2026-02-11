@@ -1,21 +1,32 @@
 # Hand-Drawn Map / 手绘地图
 
-A Vue 3 + Vite + TypeScript single-page interactive map application using MapLibre GL JS, featuring hand-drawn watercolor-style basemap with bilingual support (Chinese/English).
+A comprehensive hand-drawn scenic map system supporting multi-platform deployment (H5, WeChat Mini Program, APP) with Vue 3 + TypeScript.
 
-一个基于 Vue 3 + Vite + TypeScript 的单页面交互地图应用，使用 MapLibre GL JS，支持手绘水彩风格底图和中英双语切换。
+一个完整的手绘景区地图系统，支持多端部署（H5、微信小程序、APP），基于 Vue 3 + TypeScript。
 
-## Features / 特性
+## 📋 Project Overview / 项目概览
 
-- 🗺️ **Hand-Drawn Basemap** - Raster tile-based map with watercolor-style placeholder tiles / 基于栅格瓦片的手绘水彩风格底图
-- 🌍 **Bilingual Support** - Chinese and English UI with vue-i18n / 使用 vue-i18n 实现中英文双语界面
-- 📍 **POI Markers** - Points of Interest with interactive popups / 兴趣点标记，支持交互式弹窗
-- 🏔️ **Viewpoints** - Scenic viewpoint markers / 观景点标记
-- 🚶 **Multi-Modal Routes** - Walking, biking, and boat routes with filtering / 支持步行、骑行、船只等多种交通方式路线及筛选
-- 📊 **Route Statistics** - Display total duration and distance for selected routes / 显示选中路线的总时长和总距离
-- 🎛️ **Layer Controls** - Toggle visibility of different map layers / 图层开关控制
-- 🔄 **Configurable Bounds** - Centralized bbox configuration for map bounds / 集中配置地图边界
+This repository contains:
 
-## Getting Started / 快速开始
+### Current Implementation (v1.0)
+A production-ready **Vue 3 + Vite + MapLibre GL JS** single-page application with:
+- ✅ Interactive hand-drawn map display
+- ✅ POI markers with bilingual popups
+- ✅ Multi-modal route filtering
+- ✅ Layer controls and statistics
+- ✅ Responsive design
+
+### Future Architecture (Documented)
+Complete architecture documentation for **Vue 3 + uni-app + OpenLayers + PHP (Yaf)**:
+- 📱 Multi-platform support (H5/WeChat/APP)
+- 🔧 Backend API with PHP + Yaf
+- 💾 MySQL database design
+- 🎨 Admin management panel
+- 🐳 Docker deployment
+
+## 🚀 Quick Start / 快速开始
+
+### Current Implementation
 
 ### Prerequisites / 前置要求
 
@@ -131,7 +142,7 @@ initialZoom: 1,         // Initial zoom level / 初始缩放级别
 
 ### Updating Data / 更新数据
 
-Edit the GeoJSON files in `src/data/` to add or modify features / 编辑 `src/data/` 中的 GeoJSON 文件以添加或修改要素：
+Edit the GeoJSON files in `public/` to add or modify features / 编辑 `public/` 中的 GeoJSON 文件以添加或修改要素：
 
 - **POIs** (`pois.geojson`): Points of Interest / 兴趣点
 - **Viewpoints** (`viewpoints.geojson`): Scenic viewpoints / 观景点
@@ -146,13 +157,46 @@ Each feature should include bilingual properties / 每个要素应包含双语�
   - `distance_km`: Distance in kilometers / 距离（公里）
   - `highlight_ids`: Array of POI/viewpoint IDs along the route / 路线沿途的兴趣点/观景点 ID 数组
 
+## 📚 Full-Stack Architecture / 完整架构
+
+For implementing a complete production system with backend, multi-platform support, and admin panel, see:
+
+完整生产系统的实现（包含后端、多端支持、后台管理），请参阅：
+
+- **[ARCHITECTURE.md](./ARCHITECTURE.md)** - Complete system architecture / 完整系统架构
+  - Frontend: Vue 3 + uni-app (H5/WeChat/APP)
+  - Backend: PHP + Yaf framework
+  - Database: MySQL + Redis
+  - Admin panel: Vue 3
+  - Docker deployment
+
+- **[docs/IMPLEMENTATION.md](./docs/IMPLEMENTATION.md)** - Step-by-step implementation guide / 分步实施指南
+  - 8-phase implementation plan
+  - Cost estimation
+  - Development roadmap
+
+- **[docs/MIGRATION_GUIDE.md](./docs/MIGRATION_GUIDE.md)** - Migration from current to full architecture / 从当前实现迁移到完整架构
+  - Gradual migration strategy
+  - Data migration scripts
+  - API integration
+
+- **[database/schema.sql](./database/schema.sql)** - Complete database schema / 完整数据库结构
+
 ## Technologies Used / 使用的技术
 
+### Current Implementation
 - **Vue 3** - Progressive JavaScript framework / 渐进式 JavaScript 框架
 - **Vite** - Next generation frontend tooling / 下一代前端构建工具
 - **TypeScript** - Typed superset of JavaScript / JavaScript 的类型化超集
 - **MapLibre GL JS** - Open-source mapping library / 开源地图库
 - **vue-i18n** - Internationalization plugin for Vue.js / Vue.js 国际化插件
+
+### Full Architecture (Documented)
+- **uni-app** - Multi-platform development framework / 多端开发框架
+- **OpenLayers** - Map rendering engine (alternative) / 地图渲染引擎（可选）
+- **PHP + Yaf** - Backend framework / 后端框架
+- **MySQL + Redis** - Database and cache / 数据库与缓存
+- **Docker** - Containerization / 容器化部署
 
 ## License / 许可证
 
