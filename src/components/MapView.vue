@@ -59,6 +59,7 @@ import { useI18n } from 'vue-i18n';
 import maplibregl, { Map, Popup } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { mapConfig, bboxToBounds } from '../config/mapConfig';
+import type { Point } from 'geojson';
 
 const { t, locale } = useI18n();
 
@@ -220,7 +221,7 @@ function addInteractions() {
     
     if (!properties) return;
     
-    const coordinates = (feature.geometry as any).coordinates.slice();
+    const coordinates = (feature.geometry as Point).coordinates.slice() as [number, number];
     const nameKey = locale.value === 'zh' ? 'name_zh' : 'name_en';
     const descKey = locale.value === 'zh' ? 'desc_zh' : 'desc_en';
     
@@ -238,7 +239,7 @@ function addInteractions() {
     
     if (!properties) return;
     
-    const coordinates = (feature.geometry as any).coordinates.slice();
+    const coordinates = (feature.geometry as Point).coordinates.slice() as [number, number];
     const nameKey = locale.value === 'zh' ? 'name_zh' : 'name_en';
     const descKey = locale.value === 'zh' ? 'desc_zh' : 'desc_en';
     
