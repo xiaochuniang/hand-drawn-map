@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" />
+      <feColorMatrix type="saturate" values="0.3"/>
+    </filter>
+    <filter id="watercolor">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" />
+      <feGaussianBlur stdDeviation="1.5" />
+    </filter>
+  </defs>
+  
+  <!-- Base background -->
+  <rect width="256" height="256" fill="hsl(214, 24%, 89%)" />
+  
+  <!-- Watercolor texture layers -->
+  <rect width="256" height="256" fill="hsl(234, 34%, 84%)" opacity="0.3" filter="url(#watercolor)" />
+  <rect width="256" height="256" fill="hsl(194, 29%, 86%)" opacity="0.2" filter="url(#watercolor)" />
+  
+  <!-- Paper texture -->
+  <rect width="256" height="256" fill="white" opacity="0.15" filter="url(#noise)" />
+  
+  <!-- Tile coordinates for debugging (optional, can be removed) -->
+  <text x="10" y="30" font-family="monospace" font-size="12" fill="#999" opacity="0.5">z2/x2/y2</text>
+</svg>

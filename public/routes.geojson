@@ -1,0 +1,149 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-20, 20],
+          [-10, 25],
+          [0, 28],
+          [10, 30]
+        ]
+      },
+      "properties": {
+        "id": "route_walk_1",
+        "name_zh": "历史街区步行路线",
+        "name_en": "Historic District Walking Route",
+        "desc_zh": "探索老城区的历史建筑和文化遗址。",
+        "desc_en": "Explore historic buildings and cultural sites in the old town.",
+        "mode": "walk",
+        "duration_min": 45,
+        "distance_km": 2.5,
+        "highlight_ids": ["poi_1", "poi_2"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [10, 30],
+          [20, 25],
+          [30, 20],
+          [40, -10]
+        ]
+      },
+      "properties": {
+        "id": "route_walk_2",
+        "name_zh": "公园漫步路线",
+        "name_en": "Park Stroll Route",
+        "desc_zh": "穿过城市公园的轻松步行路线。",
+        "desc_en": "A relaxing walk through the city park.",
+        "mode": "walk",
+        "duration_min": 30,
+        "distance_km": 1.8,
+        "highlight_ids": ["poi_2", "poi_3"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-40, 40],
+          [-20, 35],
+          [0, 30],
+          [20, 25],
+          [40, -10],
+          [30, -20],
+          [20, -30]
+        ]
+      },
+      "properties": {
+        "id": "route_bike_1",
+        "name_zh": "环城骑行路线",
+        "name_en": "City Loop Cycling Route",
+        "desc_zh": "环绕城市的长距离骑行路线，途经多个景点。",
+        "desc_en": "A long-distance cycling route around the city, passing multiple attractions.",
+        "mode": "bike",
+        "duration_min": 90,
+        "distance_km": 12.5,
+        "highlight_ids": ["viewpoint_1", "poi_2", "poi_3", "poi_5"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-30, -20],
+          [-10, -15],
+          [10, -10],
+          [30, -5],
+          [40, -10]
+        ]
+      },
+      "properties": {
+        "id": "route_bike_2",
+        "name_zh": "海岸线骑行",
+        "name_en": "Coastal Cycling Route",
+        "desc_zh": "沿海岸线的骑行路线，风景优美。",
+        "desc_en": "A scenic cycling route along the coastline.",
+        "mode": "bike",
+        "duration_min": 60,
+        "distance_km": 8.2,
+        "highlight_ids": ["poi_4", "poi_3"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [30, 50],
+          [40, 45],
+          [50, 40],
+          [55, 30],
+          [50, 20]
+        ]
+      },
+      "properties": {
+        "id": "route_boat_1",
+        "name_zh": "港湾游船路线",
+        "name_en": "Harbor Cruise Route",
+        "desc_zh": "游船从灯塔出发，绕港湾一圈，欣赏海景。",
+        "desc_en": "A boat tour starting from the lighthouse, circling the harbor with scenic ocean views.",
+        "mode": "boat",
+        "duration_min": 75,
+        "distance_km": 6.8,
+        "highlight_ids": ["viewpoint_4", "viewpoint_2"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [50, 20],
+          [40, 10],
+          [30, 0],
+          [20, -10],
+          [10, -20]
+        ]
+      },
+      "properties": {
+        "id": "route_boat_2",
+        "name_zh": "海湾探险路线",
+        "name_en": "Bay Adventure Route",
+        "desc_zh": "探索海湾周边的自然风光。",
+        "desc_en": "Explore the natural scenery around the bay.",
+        "mode": "boat",
+        "duration_min": 120,
+        "distance_km": 15.3,
+        "highlight_ids": ["viewpoint_2"]
+      }
+    }
+  ]
+}
